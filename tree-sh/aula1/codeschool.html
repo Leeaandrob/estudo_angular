@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app="gemStore">
+	<head>
+		<script src="static/js/angular.min.js"></script>
+		<link rel="stylesheet" href="static/css/bootstrap.min.css">
+		<link rel="stylesheet" href="static/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="static/css/app.css">
+		<script src="static/css/bootstrap-theme.min.css"></script>
+        <script type="text/javascript" src="app.js"></script>
+	</head>
+ <body>
+    <div  ng-controller="StoreController as store" class="container">
+        <div class="row">
+            <div ng-repeat="product in store.products" class="col-md-4 col-sm-12">
+                <div ng-hide="product.soldOut" class="product-box">
+                <h3>{{product.name}}
+                <em class="pul-right">${{product.price}}</em></h3>
+                <button ng-show="store.products[0].canPurchase" class="btn btn-primary buy-buttom">Add to Cart</button>
+            </div>
+                </div>
+        </div>
+     </div>
+  </body>
+</html>
